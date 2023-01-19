@@ -1,10 +1,13 @@
 import React from 'react';
+import AppointmentBanner from './AppointmentBanner/AppointmentBanner';
 
 const DentalServices = () => {
     return (
-        <div>
-            <p>Dental Services</p>
-        </div>
+        <React.Fragment>
+            <section>
+                <AppointmentBanner></AppointmentBanner>
+            </section>
+        </React.Fragment>
     );
 };
 
