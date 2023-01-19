@@ -17,7 +17,7 @@ const Footer = () => {
 
     return (
         <React.Fragment>
-            <section className="grid grid-cols-3 place-items-center bg-[url('/src/assets/images/footer.png')] bg-no-repeat bg-cover bg-center py-[75px] mt-[125px]">
+            <section className="grid grid-cols-3 place-items-center bg-[url('/src/assets/images/footer.png')] bg-no-repeat bg-cover bg-center pb-[75px]">
                 <div>
                     <h2 className='text-success font-pacifico font-bold text-[24px]'>Navigations</h2>
                     <ul className='text-primary font-caveat font-bold text-[20px]'>
@@ -40,6 +40,7 @@ const Footer = () => {
                     </div>
                 </div>
             </section>
+            <p className='text-center py-[8px] bg-success font-caveat text-[22px] font-bold text-error'>© All Rights Reserved by 'Mahfujur Rahman'</p>
         </React.Fragment>
     );
 };

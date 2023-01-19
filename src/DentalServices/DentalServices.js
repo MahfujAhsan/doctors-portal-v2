@@ -4,9 +4,9 @@ import AppointmentBanner from './AppointmentBanner/AppointmentBanner';
 const DentalServices = () => {
     return (
         <React.Fragment>
-            <section>
+            <div>
                 <AppointmentBanner></AppointmentBanner>
-            </section>
+            </div>
         </React.Fragment>
     );
 };

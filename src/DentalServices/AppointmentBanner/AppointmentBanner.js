@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { DayPicker } from 'react-day-picker';
+import { format } from "date-fns";
 import ChairImage from "../../assets/images/chair.png";
 
 const AppointmentBanner = () => {
+
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
     return (
         <React.Fragment>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src={ChairImage} className="max-w-sm rounded-lg shadow-2xl" />
-                    <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
+            <section className='mb-[70px]'>
+                <div className="hero bg-[url('/src/assets/images/bg.png')] bg-cover bg-no-repeat bg-left-bottom py-[45px]">
+                    <div className="flex flex-row-reverse lg:gap-[50px]">
+                        <img src={ChairImage} className="w-6/12 ml-auto rounded-lg shadow-2xl" alt='chairImage' />
+                        <div className='w-6/12 mx-auto'>
+                            <h1 className="text-[38px] font-pacifico font-bold text-error text-center">Appointment</h1>
+                            <DayPicker mode='single'
+                                selected={selectedDate}
+                                onSelect={setSelectedDate}
+                            />
+                            <p className='font-pacifico text-[24px] text-center text-success'>You have selected: {format(selectedDate, 'PP')}.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </React.Fragment>
     );
 };

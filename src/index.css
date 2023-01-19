@@ -2,3 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Pacifico&display=swap');
+
+/* Customize React Date Picker */
+.rdp {
+    width: 90%!important;
+    margin: auto!important;
+    background: #BAD8E0;
+    border-radius: 8px!important;
+    padding: 35px 0!important;
+    margin: 35px 0!important;
+}
+
+.rdp-caption {
+    margin-bottom: 25px!important;
+}
+
+.rdp-caption_label {
+    font-family: 'caveat'!important;
+    font-size: 34px!important;
+    color: #1b4d89!important;
+}
+
+.rdp-nav_button {
+    color: #6db784!important;
+}
+
+.rdp-nav_icon {
+    width: 25px!important;
+    height: 25px!important;
+}
+
+.rdp-head {
+    font-family: 'pacifico'!important;
+    font-size: 20px!important;
+    color: #C53678!important;
+}
+
+.rdp-months {
+    width: 100%!important;
+    justify-content: center!important;
+}
+
+.rdp-day {
+    font-family: 'pacifico'!important;
+    font-size: 24px!important;
+}
+
+.rdp-cell {
+    padding: 10px!important;
+}
+
+.rdp-day_selected {
+    background: #6db784!important;
+}
