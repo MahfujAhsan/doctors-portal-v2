@@ -3,9 +3,9 @@ import About from "../../About/About";
 import ContactUs from "../../ContactUs/ContactUs";
 import DentalServices from "../../DentalServices/DentalServices";
 import Main from "../../Layout/Main";
+import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
-import Reviews from "../../Reviews/Reviews";
 import Signup from "../../Signup/Signup";
 
 const route = createBrowserRouter([
@@ -26,10 +26,6 @@ const route = createBrowserRouter([
                 element: <About></About>
             },
             {
-                path: "/reviews",
-                element: <Reviews></Reviews>
-            },
-            {
                 path: "/contact-us",
                 element: <ContactUs></ContactUs>
             },
@@ -44,6 +40,10 @@ const route = createBrowserRouter([
             },
         ]
     },
+    {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>
+    }
 ]);
 
 export default route;

@@ -6,9 +6,9 @@ const Banner = () => {
         <React.Fragment>
             <section className="mt-[65px]">
                 <div className="hero">
-                    <div className="hero-content flex-col lg:flex-row-reverse lg:gap-[50px]">
+                    <div className="hero-content flex-col lg:flex-row-reverse lg:gap-[50px] bg-[url('/src/assets/images/bg.png')] bg-contain bg-no-repeat bg-center">
                         <img src={ChairImage} className="rounded-lg w-11/12 shadow-2xl" alt='chairImage'/>
-                        <div className="bg-[url('/src/assets/images/bg.png')] bg-contain bg-no-repeat bg-right">
+                        <div>
                             <h1 className="text-5xl font-bold font-pacifico leading-[65px]">
                                 Your New Smile
                                 <br />

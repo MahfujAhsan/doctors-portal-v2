@@ -1,6 +1,7 @@
 import React from "react";
 import { RouterProvider } from "react-router-dom";
 import route from "./Routes/Routes/Routes";
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <RouterProvider router={route}>
 
         </RouterProvider>
+        <ToastContainer />
       </section>
     </React.Fragment>
   );

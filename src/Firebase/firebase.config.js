@@ -1,16 +1,19 @@
+
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwHyeWkmOaE18xo0pZsDD1cWYw4QMuaqs",
-  authDomain: "doctors-portal-v2-9978d.firebaseapp.com",
-  projectId: "doctors-portal-v2-9978d",
-  storageBucket: "doctors-portal-v2-9978d.appspot.com",
-  messagingSenderId: "972914949094",
-  appId: "1:972914949094:web:c6185d76a55b6e4b5df427"
+  apiKey: "AIzaSyAApeSzV_TIe6_1_-Js9uZ_Z7to3g3APHA",
+  authDomain: "doctors-portal-v2-c4145.firebaseapp.com",
+  projectId: "doctors-portal-v2-c4145",
+  storageBucket: "doctors-portal-v2-c4145.appspot.com",
+  messagingSenderId: "65959866638",
+  appId: "1:65959866638:web:ead62358f40237348f275f"
 };
 
 
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+
+
+export default app;

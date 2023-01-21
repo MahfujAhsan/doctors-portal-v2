@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import 'react-day-picker/dist/style.css';
+import 'react-toastify/dist/ReactToastify.css';
+import AuthProvider from './contexts/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.Fragment>
-    <App />
-  </React.Fragment>
+  <React.StrictMode>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>
 );
