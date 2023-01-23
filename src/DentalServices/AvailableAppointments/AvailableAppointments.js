@@ -1,18 +1,29 @@
+import { useQuery } from '@tanstack/react-query';
 import { format } from 'date-fns';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import Spinner from '../../Pages/Shared/Spinner/Spinner';
 import BookingModal from '../BookingModal/BookingModal';
 import AvailableOption from './AvailableOption';
 
 const AvailableAppointments = ({ selectedDate }) => {
-
-    const [appointmentOptions, setAppointmentOptions] = useState([]);
     const [treatment, setTreatment] = useState(null);
 
-    useEffect(() => {
-        fetch('services.json')
-            .then((res) => res.json())
-            .then((data) => setAppointmentOptions(data))
-    }, []);
+    const date = format(selectedDate, 'PP');
+
+    const {data:appointmentOptions = [], refetch, isLoading} = useQuery({
+        queryKey: ['appointmentOptions', date],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/v2/appointmentOptions?date=${date}`);
+            const data = res.json();
+            return data;
+        }
+    });
+
+    if(isLoading) {
+        return <Spinner />
+    }
+
+
 
     return (
         <React.Fragment>
@@ -29,6 +40,7 @@ const AvailableAppointments = ({ selectedDate }) => {
                 </div>
                 {
                     treatment && <BookingModal
+                    refetch={refetch}
                     treatment={treatment}
                     selectedDate={selectedDate}
                     setTreatment={setTreatment}

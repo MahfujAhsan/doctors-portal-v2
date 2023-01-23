@@ -10,19 +10,24 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
+    const [loading, setLoading] = useState(true);
+
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     const signIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
     const updateUser = (userInfo) => {
-        return updateProfile(user, userInfo);
+        return updateProfile(auth.currentUser, userInfo);
     };
 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     };
 
@@ -30,6 +35,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log("User Observer");
             setUser(currentUser);
+            setLoading(false);
         });
 
         return () => unsubscribe();
@@ -39,8 +45,9 @@ const AuthProvider = ({ children }) => {
         createUser,
         signIn,
         updateUser,
+        logOut,
         user,
-        logOut
+        loading
     }
 
     return (

@@ -2,11 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import About from "../../About/About";
 import ContactUs from "../../ContactUs/ContactUs";
 import DentalServices from "../../DentalServices/DentalServices";
+import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
-import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import MyAppointment from "../../Pages/Dashboard/MyAppointment/MyAppointment";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Signup from "../../Signup/Signup";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const route = createBrowserRouter([
     {
@@ -42,7 +44,14 @@ const route = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                path: "/dashboard",
+                element: <MyAppointment></MyAppointment>
+
+            }
+        ]
     }
 ]);
 
