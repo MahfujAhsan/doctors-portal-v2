@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppointDoctor from "../../../assets/images/doctor.png";
 
 const Appointment = () => {
@@ -12,7 +13,11 @@ const Appointment = () => {
                             <h5 className='font-caveat text-[22px] font-bold text-neutral'>APPOINTMENT</h5>
                             <h1 className='font-pacifico text-[38px] font-bold my-[10px] text-secondary'>Make an appointment Today</h1>
                             <p className="pb-[45px] pt-[15px] font-caveat text-[22px] font-semibold text-neutral">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque magnam voluptas nesciunt officia velit sed labore doloribus magni? Eligendi aliquid fuga ad consequatur ea officiis at vero voluptatibus.</p>
-                            <button className="bg-gradient-to-r from-neutral to-secondary font-bold font-pacifico text-[22px] px-[45px] py-[15px] text-primary border-none rounded-[8px]">Learn More</button>
+                            <button className="bg-gradient-to-r from-neutral to-secondary font-bold font-pacifico text-[22px] px-[45px] py-[15px] text-primary border-none rounded-[8px]">
+                                <Link to="/dental-services">
+                                    Learn More
+                                </Link>
+                            </button>
                         </div>
                     </div>
                 </div>

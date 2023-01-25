@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ChairImage from "../../../assets/images/chair.png";
 
 const Banner = () => {
@@ -15,7 +16,9 @@ const Banner = () => {
                                 Starts Here
                                 </h1>
                             <p className="py-8 font-caveat text-[30px]">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                            <button className="bg-gradient-to-r from-neutral to-primary font-bold text-secondary font-pacifico border-none text-[22px] px-[45px] py-[15px] rounded-[8px]">Get Appointment</button>
+                            <button className="bg-gradient-to-r from-neutral to-primary font-bold text-secondary font-pacifico border-none text-[22px] px-[45px] py-[15px] rounded-[8px]">
+                                <Link to="/dental-services">Get Appointment</Link>
+                            </button>
                         </div>
                     </div>
                 </div>

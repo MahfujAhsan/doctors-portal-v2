@@ -4,6 +4,7 @@ import ContactUs from "../../ContactUs/ContactUs";
 import DentalServices from "../../DentalServices/DentalServices";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import MyAppointment from "../../Pages/Dashboard/MyAppointment/MyAppointment";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -49,6 +50,11 @@ const route = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <MyAppointment></MyAppointment>
+
+            },
+            {
+                path: "/dashboard/all-users",
+                element: <AllUsers></AllUsers>
 
             }
         ]
