@@ -36,7 +36,7 @@ const AllUsers = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
+                            <th>Email</th>
                             <th>Admin</th>
                             <th>Delete</th>
                         </tr>
