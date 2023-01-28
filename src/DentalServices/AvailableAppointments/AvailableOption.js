@@ -2,7 +2,7 @@ import React from 'react';
 
 const AvailableOption = ({ appointmentOption, setTreatment }) => {
 
-    const { name, slots } = appointmentOption;
+    const { name, price, slots } = appointmentOption;
 
     return (
         <React.Fragment>
@@ -10,7 +10,8 @@ const AvailableOption = ({ appointmentOption, setTreatment }) => {
                 <div className="card-body text-center">
                     <h2 className="card-title justify-center font-bold font-caveat text-[26px] text-error">{name}</h2>
                     <p className='mt-[5px] font-pacifico'>{slots.length > 0 ? slots[0] : 'Try Another Day'}</p>
-                    <p className='font-pacifico mb-[15px] text-primary'>{slots.length} {slots.length > 1 ? 'spaces' : 'space'} Spaces Available</p>
+                    <p className='font-pacifico text-primary'>{slots.length} {slots.length > 1 ? 'spaces' : 'space'} Spaces Available</p>
+                    <p><small className='font-bold'>Price: ${price}</small></p>
                     <div className="card-actions justify-center">
                         <label
                         disabled={slots.length === 0}
