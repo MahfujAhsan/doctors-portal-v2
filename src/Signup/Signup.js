@@ -19,23 +19,23 @@ const Signup = () => {
 
     const navigate = useNavigate();
 
-    if(token) {
+    if (token) {
         navigate("/");
     }
 
     const saveUser = (name, email) => {
-        const user = {name, email};
-        fetch('http://localhost:5000/users', {
+        const user = { name, email };
+        fetch('https://doctors-portal-v2-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
         })
-        .then(res => res.json())
-        .then(data => {
-            setCreatedUserEmail(email);
-        });
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email);
+            });
     };
 
     const onSubmit = data => {
@@ -49,9 +49,9 @@ const Signup = () => {
                     displayName: data.name
                 }
                 updateUser(userInfo)
-                    .then(() => { 
+                    .then(() => {
                         saveUser(data.name, data.email);
-                     })
+                    })
                     .catch(err => { console.log(err) });
             })
             .catch(err => {

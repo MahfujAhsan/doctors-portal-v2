@@ -10,16 +10,16 @@ const AvailableAppointments = ({ selectedDate }) => {
 
     const date = format(selectedDate, 'PP');
 
-    const {data:appointmentOptions = [], refetch, isLoading} = useQuery({
+    const { data: appointmentOptions = [], refetch, isLoading } = useQuery({
         queryKey: ['appointmentOptions', date],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/v2/appointmentOptions?date=${date}`);
+            const res = await fetch(`https://doctors-portal-v2-server.vercel.app/v2/appointmentOptions?date=${date}`);
             const data = res.json();
             return data;
         }
     });
 
-    if(isLoading) {
+    if (isLoading) {
         return <Spinner />
     }
 
@@ -32,18 +32,18 @@ const AvailableAppointments = ({ selectedDate }) => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[65px] mb-[85px]'>
                     {
                         appointmentOptions.map((option) => <AvailableOption
-                        key={option._id}
-                        appointmentOption={option}
-                        setTreatment={setTreatment}
+                            key={option._id}
+                            appointmentOption={option}
+                            setTreatment={setTreatment}
                         />)
                     }
                 </div>
                 {
                     treatment && <BookingModal
-                    refetch={refetch}
-                    treatment={treatment}
-                    selectedDate={selectedDate}
-                    setTreatment={setTreatment}
+                        refetch={refetch}
+                        treatment={treatment}
+                        selectedDate={selectedDate}
+                        setTreatment={setTreatment}
                     ></BookingModal>
                 }
             </section>

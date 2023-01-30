@@ -15,7 +15,7 @@ const AddDoctor = () => {
     const { data: specialties = [], isLoading } = useQuery({
         queryKey: ['specialty'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/appointmentSpecialty');
+            const res = await fetch('https://doctors-portal-v2-server.vercel.app/appointmentSpecialty');
             const data = res.json();
             return data;
         }
@@ -40,7 +40,7 @@ const AddDoctor = () => {
                         image: imgData.data.url
                     }
 
-                    fetch('http://localhost:5000/doctors', {
+                    fetch('https://doctors-portal-v2-server.vercel.app/doctors', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -48,11 +48,11 @@ const AddDoctor = () => {
                         },
                         body: JSON.stringify(doctor)
                     })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        toast.success(`${data?.name} is Added Successfully`);
-                        navigate('/dashboard/manage-doctors');
-                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            toast.success(`${data?.name} is Added Successfully`);
+                            navigate('/dashboard/manage-doctors');
+                        })
                 }
             })
     }
